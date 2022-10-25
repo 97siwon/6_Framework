@@ -41,14 +41,20 @@ public class MemberServiceImpl implements MemberService {
 		//    --> BCryptPasswordEncoder.matches(평문, 암호문) 이용
 		//        --> 같으면 true, 아니면 false
 		
-		// 3-1. 비밀번호가 일치하면 조회된 회원 정보 반환
-		//      단, 비밀번호는 제거
-		
-		// 3-2. 비밀번호가 일치하지 않으면 null을 반환
-		
-		
-		
-		return null;
+		if(loginMember != null) { // 아이디 정상 입력
+			
+			if(bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
+				// 3-1. 비밀번호가 일치하면 조회된 회원 정보 반환
+				//      단, 비밀번호는 제거
+				loginMember.setMemberPw(null);
+							
+			} else {
+				// 3-2. 비밀번호가 일치하지 않으면 null을 반환
+				loginMember = null;
+			}
+		}
+	
+		return loginMember;
 	}
 	
 }
