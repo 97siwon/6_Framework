@@ -61,8 +61,7 @@
 
 	<!-- SqlSessionTemplate : 기본 SQL 실행 + 트랜잭션 관리 역할을 하는 SqlSession을 생성할 수 있게 
 		하는 객체(Spring bean으로 등록해야함.) -->
-	<bean id="sqlSessionTemplate"
-		class="org.mybatis.spring.SqlSessionTemplate">
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactoryBean" />
 	</bean>
 
@@ -77,8 +76,7 @@
 
 	<!-- 트랜잭션 처리 시 @Transactional 어노테이션 사용할 예정 @Transactional : 클래스 또는 메서드 수행 
 		후 트랜잭션 처리를 하라고 알려주는 어노테이션 -> 해당 어노테이션을 인식하라는 설정이 필요함 -> annotation-driven -->
-	<tx:annotation-driven
-		transaction-manager="transactionManager" />
+	<tx:annotation-driven transaction-manager="transactionManager" />
 
 
 </beans>

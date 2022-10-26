@@ -26,4 +26,10 @@ public class MemberDAO {
 		return sqlSession.selectOne("memberMapper.login", memberEmail);
 	}
 
+
+	public int signUp(Member inputMember) {
+		return sqlSession.insert("memberMapper.signUp", inputMember);
+		
+	}
+
 }
