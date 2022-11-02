@@ -332,9 +332,9 @@ public class MemberController {
 			path = referer; // 이전 페이지로 이동
 			message = "회원 가입 실패...";
 			
-			// 이전 페이지로 돌아갔을 때 입력했던 값을 같이 전달
-			inputMember.setMemberPw(null); // 비밀번호 삭제
-			ra.addFlashAttribute("tempMember", inputMember);
+		// 이전 페이지로 돌아갔을 때 입력했던 값을 같이 전달
+		inputMember.setMemberPw(null); // 비밀번호 삭제
+		ra.addFlashAttribute("tempMember", inputMember);
 		}
 		
 		ra.addFlashAttribute("message", message);
