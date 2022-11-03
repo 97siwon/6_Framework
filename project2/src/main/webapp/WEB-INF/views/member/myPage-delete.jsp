@@ -15,6 +15,7 @@
 <body>
     <main>
         <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+        <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
         <section class="myPage-content">
 
@@ -27,11 +28,12 @@
                     현재 비밀번호가 일치하는 경우 새 비밀번호로 변경할 수 있습니다.    
                 </span>
 
-                <form action="delete" method="POST" name="myPage-frm">
+                <form action="delete" method="POST" name="myPage-frm" id="memberDeleteForm"
+                    onsubmit="return memberDeleteValidate();">
 
                     <div class="myPage-row">
                         <label>비밀번호</label>
-                        <input type="password" name="memberPw" maxlength="20">
+                        <input type="password" name="memberPw" id="memberPw" maxlength="20">
                     </div>
 
                     <div class="myPage-row infp-title">
@@ -81,6 +83,9 @@
     </main>
 
         <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+        <%-- myPage.js external 방식으로 추가 --%>
+        <script src="/resources/js/member/myPage.js"></script>
 
 
         <!-- 다음 주소 API 추가 -->
