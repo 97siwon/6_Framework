@@ -167,5 +167,5 @@ function memberDeleteValidate(){
         return false;
     }
 
-    return false
+    return true;
 }

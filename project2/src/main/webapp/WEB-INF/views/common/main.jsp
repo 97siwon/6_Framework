@@ -25,7 +25,7 @@
         추가적으로 웹 접근성 향상에 도움이되는
         시맨틱 태그(Semantic Tag, 의미있는 태그)가 HTML5에서 추가됨.
         * 시맨틱 태그는 div 태그의 이름만 바뀐 것으로 생각하는게 좋다!
-         
+        
         [시맨틱 태그 종류]
         <main> : 현재 문서의 주된 콘텐츠를 작성하는 영역
         <header> : 문서의 제목, 머리말 영역
@@ -38,7 +38,7 @@
     -->
 
     <main>
-       <%-- header.jsp 추가(포함) --%>
+        <%-- header.jsp 추가(포함) --%>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 		<%-- 
 			jsp 액션 태그 중 include
@@ -48,7 +48,58 @@
 
         <section class="content">
             <section class="content-1">
-                ${loginMember}
+                <div>
+                    <h3>이메일로 회원 정보 조회(AJAX)</h3>
+
+                    이메일 : <input type="text" id="inputEmail">
+                    <button id="selectEmail">조회</button>
+
+                    <%-- <!-- 일치하는 이메일이 있는 경우 -->
+                    <ul>
+                        <li>회원번호 : 1</li>
+                        <li>이메일 : user01@kh.or.kr</li>
+                        <li>닉네임 : 유저일</li>
+                        <li>주소 : 서울시</li>
+                        <li>가입일 : 2022년 10월 18일</li>
+                    </ul>
+
+                    <!-- 일치하는 이메일이 없을 경우 -->
+                    <h4>user01@kh.or.kr은/는 존재하지 않습니다.</h4> --%>
+                </div>
+
+                <div id="content-1-2">
+                    <h3>10초마다 모든 회원 정보 조회(AJAX)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>회원번호</th>
+                                <th>이메일</th>
+                                <th>탈퇴여부</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="tbody">
+                            <%-- <tr>
+                                <th>1</th>
+                                <td>user01@kh.or.kr</td>
+                                <td>N</td>
+                            </tr>
+                            <tr class="secession">
+                                <th >2</th>
+                                <td>user02@kh.or.kr</td>
+                                <td>Y</td>
+                            </tr> --%>
+                        </tbody>
+                        
+                        <tfoot>
+                            <tr>
+                                <th>회원 수</th>
+                                <th colspan="2" id="memberCount"></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
             </section>
 
             <section class="content-2">
@@ -149,6 +200,9 @@
     <%-- footer.jsp 포함 --%>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+
+    <!-- jQuery 를 CDN방식으로 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="/resources/js/main.js"></script>
 
 </body>
