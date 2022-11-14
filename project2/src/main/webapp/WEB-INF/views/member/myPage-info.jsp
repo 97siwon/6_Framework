@@ -40,13 +40,13 @@
                     <div class="myPage-row">
                         <label>닉네임</label>
                         <input type="text" name="memberNickname" value="${loginMember.memberNickname}"
-                         maxlength="10">
+                        maxlength="10">
                     </div>
 
                     <div class="myPage-row">
                         <label>전화번호</label>
                         <input type="text" name="memberTel" value="${loginMember.memberTel}"
-                         maxlength="11">
+                        maxlength="11">
                     </div>
 
                     <div class="myPage-row info-title">
@@ -59,13 +59,13 @@
 
                     <div class="myPage-row info-address">
                         <input type="text" name="memberAddress" value="${addr[0]}"
-                         placeholder="우편번호">
+                        placeholder="우편번호">
                         <button type="button">검색</button>
                     </div>
 
                     <div class="myPage-row info-address">
                         <input type="text" name="memberAddress" value="${addr[1]}"
-                         placeholder="도로명/지번 주소">
+                        placeholder="도로명/지번 주소">
                     </div>
 
                     <div class="myPage-row info-address">
