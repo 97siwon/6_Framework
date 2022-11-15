@@ -39,6 +39,7 @@ import edu.kh.project.member.model.vo.Member;
 @Controller 
 @SessionAttributes({"loginMember","message","test2"})
 // -> model에 추가된 속성 중 Key가 일치하는 속성을 session scope 속성으로 추가
+// -> model 정보를 HTTP Session에 저장해주는 어노테이션 
 
 public class MemberController {
 	
@@ -153,7 +154,7 @@ public class MemberController {
 	
 	@PostMapping("/member/login")
 	public String login(/* @ModelAttribute */ Member inputMember,
-			            Model model, RedirectAttributes ra,
+			            Model model, RedirectAttributes ra, // RedirectAttributes가 제공하는 메소드 == addFlashAttribute
 			            @RequestParam(value="saveId", required=false) String saveId,
 			            HttpServletResponse resp, // 쿠키 전달용
 			            @RequestHeader(value="referer") String referer) { // 요청 이전 주소
@@ -243,7 +244,7 @@ public class MemberController {
 			
 			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다");
 
-			// addFlashAttribute() : 잠깐 session scope에 푸가
+			// addFlashAttribute() : 잠깐 session scope에 추가
 			
 		}
 		
