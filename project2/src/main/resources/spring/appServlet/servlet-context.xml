@@ -55,6 +55,17 @@
 	
 	<context:component-scan base-package="edu.kh.project" />
 	
+	<!-- 인터셉터 등록/매핑 주소 설정 -->
+	<interceptors>
+		
+		<interceptor>
+			<mapping path="/**"/> <!-- 모든 요청 주소 -->
+			<beans:bean id="BoardTypeIntercepter" class="edu.kh.project.common.intercepter.BoardTypeIntercepter" />
+			
+		</interceptor>
+		
+	</interceptors>
+	
 	
 	
 </beans:beans>
