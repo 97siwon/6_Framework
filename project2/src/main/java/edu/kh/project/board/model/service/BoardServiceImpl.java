@@ -12,7 +12,7 @@ import edu.kh.project.board.model.vo.Board;
 import edu.kh.project.board.model.vo.Pagination;
 
 @Service
-public class boardServiceImpl implements BoardService {
+public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
 	private BoardDAO dao;
