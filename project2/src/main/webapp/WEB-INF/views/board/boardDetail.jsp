@@ -42,10 +42,25 @@
                         <img src="${board.profileImage}">
                     </c:if>
 
-
-
-
                     <span>${board.memberNickname}</span>
+
+                    <!-- 좋아요 -->
+                    <span class="like-area">
+                        <%-- likeCheck가 없다면 == 로그인X 또는 좋아요X  --%>
+                        <c:if test="${empty likeCheck}">
+                            <!-- 빈 하트 -->
+                            <i class="fa-regular fa-heart" id="boardLike"></i>
+                        </c:if>
+                        
+                        <%-- likeCheck가 있다면 == 로그인O 또는 좋아요O  --%>
+                        <c:if test="${not empty likeCheck}">
+                            <!-- 채워진 하트 -->
+                            <i class="fa-solid fa-heart" id="boardLike"></i>
+                        </c:if>
+
+                        <!-- 좋아요 수 -->
+                        <span>${board.likeCount}</span>
+                    </span>
 
                 </div>
 
@@ -140,7 +155,28 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
-    <script src="/resources/js/bond/board.js"></script>
+    <%-- JSP 내장 객체에 세팅 값을 JS에서 얻어가는 방법 1 --%>
+    <%-- 화면에 숨겨놓고 JS를 이용해서 값을 얻어가는 방법 --%>
+    <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
+
+    <%-- JSP 내장 객체에 세팅 값을 JS에서 얻어가는 방법 2 --%>
+    <%-- - script 태그를 이용해서 전역변수로 선언하는 방법 --%>
+    <script>
+        // 로그인한 회원 번호 얻어오기
+
+        // (참고) JSP 해석 순서 : EL/JSTL > HTML > JS 
+        // *** JS에 EL/JSTL 사용 시 양쪽에 "" 또는 ''를 붙이는 것을 권장 ***
+        // -> 왜? 값이 없어서 공백이 되더라도 ""(빈문자열)로 인식하여
+        //   에러발생을 막음
+        const memberNo = "${loginMember.memberNo}";
+
+        const boardNo = "${boardNo}";
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script src="/resources/js/board/board.js"></script>
 
 
 </body>

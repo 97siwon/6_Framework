@@ -134,3 +134,15 @@
     color : #455ba8;
     border: 2px solid #455ba8;
 }
+
+
+/* 좋아요 */
+.like-area{
+    margin-left: 20px !important; 
+}
+
+#boardLike{
+    font-size: 1.1em;
+    color: red;
+    cursor: pointer;
+}
