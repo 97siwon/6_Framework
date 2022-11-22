@@ -207,9 +207,8 @@ SELECT BOARD_NO, BOARD_TITLE, MEMBER_NICKNAME, READ_COUNT,
 			keyProperty : key를 담을 변수를 지정하는 속성
 			  
 		-->
-		<insert id="boardWrite" useGeneratedKeys="true">
+		<insert id="boardWrite" parameterType="Board" useGeneratedKeys="true">
 		
-			<!-- 동적쿼리 -->
 			<selectKey keyProperty="boardNo" resultType="_int" order="BEFORE">
 				SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL
 			</selectKey>
