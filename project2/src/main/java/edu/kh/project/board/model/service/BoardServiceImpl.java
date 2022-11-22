@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import edu.kh.project.board.model.dao.BoardDAO;
 import edu.kh.project.board.model.vo.Board;
@@ -98,6 +99,22 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int boardDelete(int boardNo) {
 		return dao.boardDelete(boardNo);
+	}
+
+	/**
+	 * 게시글 삽입
+	 */
+	@Override
+	public int boardWrite(Board board, List<MultipartFile> imageList, String webPath, String folderPath) {
+		
+		// 1. 게시글만 삽입
+		// 1) 
+		
+		// 2) 게시글 삽입 DAO 호출 후 
+		//    결과로 삽입된 게시글 번호 반환 받기
+		int boardNo = dao.boardWrite(board);
+		
+		return 0;
 	}
 	
 	
