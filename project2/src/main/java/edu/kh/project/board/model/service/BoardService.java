@@ -49,4 +49,10 @@ public interface BoardService {
 	 */
 	int boardLikeDown(Map<String, Object> paramMap);
 
+	/** 게시물 삭제
+	 * @param boardNo 
+	 * @return
+	 */
+	int boardDelete(int boardNo);
+
 }

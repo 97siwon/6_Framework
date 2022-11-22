@@ -93,5 +93,12 @@ public class BoardDAO {
 	public int boardLikeDown(Map<String, Object> paramMap) {
 		return sqlSession.delete("boardMapper.boardLikeDown", paramMap);
 	}
+
+	/** 게시물 삭제
+	 * @return
+	 */
+	public int boardDelete(int boardNo) {
+		return sqlSession.update("boardMapper.boardDelete", boardNo);
+	}
 	
 }

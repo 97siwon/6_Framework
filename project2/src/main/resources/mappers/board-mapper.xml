@@ -179,4 +179,10 @@ SELECT BOARD_NO, BOARD_TITLE, MEMBER_NICKNAME, READ_COUNT,
 			AND MEMBER_NO = #{memberNo}
 		</delete>
 
+		<!-- 게시글 삭제 -->
+		<update id="boardDelete">
+			UPDATE BOARD SET
+			BOARD_DEL_FL = 'Y'
+			WHERE BOARD_NO = #{boardNo}
+		</update>
 </mapper>
