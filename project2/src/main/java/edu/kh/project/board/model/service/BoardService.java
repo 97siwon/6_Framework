@@ -8,6 +8,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.kh.project.board.model.vo.Board;
 
+/**
+ * @author user1
+ *
+ */
 public interface BoardService {
 
 	/** 게시판 이름 목록 조회
@@ -79,5 +83,10 @@ public interface BoardService {
 	 */
 	int boardUpdate(Board board, List<MultipartFile> imageList, String webPath, 
 			String folderPath, String deleteList) throws Exception;
+
+	/** 검색 목록 조회
+	 * @return
+	 */
+	Map<String, Object> selectBoardList(Map<String, Object> pm, int cp);
 
 }
