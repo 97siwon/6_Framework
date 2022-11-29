@@ -378,7 +378,9 @@
 		ORDER BY BOARD_NO DESC
 	</select>
 	
-	
+	<select id="selelctImageList2" resultType="string"> 
+		SELECT IMG_RENAME FROM BOARD_IMG
+	</select>
 	
 	
 </mapper>
