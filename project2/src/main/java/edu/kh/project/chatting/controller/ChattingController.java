@@ -80,7 +80,7 @@ public class ChattingController {
         return new Gson().toJson(roomList);
     }
     
-    // 읽음 비동기 처리
+    // 읽음 비동기 처리 
     @GetMapping("/chatting/updateReadFlag")
     @ResponseBody
     public int updateReadFlag(@RequestParam Map<String, Object> paramMap) {
